@@ -1,14 +1,14 @@
-//Further reading:
+// Further reading:
 
-//http://kb.mozillazine.org/About:config_entries (Outdated)
-//http://thesimplecomputer.info/tscs-firefox-tweak-guide
-//https://www.privacytools.io/#about_config
+// http://kb.mozillazine.org/About:config_entries (Outdated)
+// http://thesimplecomputer.info/tscs-firefox-tweak-guide
+// https://www.privacytools.io/#about_config
 
-//----------------------------------------------------
+// ----------------------------------------------------
 
-//SPEED
+// SPEED
 
-//(Default values from Tor Browser 4.5.3:)
+// (Default values from Tor Browser 4.5.3:)
 
 user_pref('network.http.pipelining', true);
 user_pref('network.http.pipelining.abtest', false);
@@ -31,132 +31,132 @@ user_pref('network.http.fast-fallback-to-IPv4', true);
 user_pref('network.dns.disablePrefetch', true);
 user_pref('network.prefetch-next', true);
 
-//(End of Tor default values)
+// (End of Tor default values)
 
-//Enable new cache:
-//https://bugzilla.mozilla.org/show_bug.cgi?id=913807
+// Enable new cache:
+// https://bugzilla.mozilla.org/show_bug.cgi?id=913807
 user_pref('browser.cache.use_new_backend', 1);
 
-//----------------------------------------------------
+// ----------------------------------------------------
 
-//SECURITY/PRIVACY
+// SECURITY/PRIVACY
 
-//Disable WebRTC (extremely important for VPN users - WebRTC *will* leak your real IP address):
+// Disable WebRTC (extremely important for VPN users - WebRTC *will* leak your real IP address):
 user_pref('media.peerconnection.enabled', false);
 user_pref('media.peerconnection.use_document_iceservers', false);
 
-//Disable DNS proxy bypass:
-//http://kb.mozillazine.org/Network.proxy.socks_remote_dns
+// Disable DNS proxy bypass:
+// http://kb.mozillazine.org/Network.proxy.socks_remote_dns
 user_pref('network.proxy.socks_remote_dns', true);
 
-//Disable IPv6:
-//http://kb.mozillazine.org/Network.dns.disableIPv6
+// Disable IPv6:
+// http://kb.mozillazine.org/Network.dns.disableIPv6
 user_pref('network.dns.disableIPv6', true);
 
-//Disable crash reporting:
-//http://kb.mozillazine.org/Breakpad.reportURL
+// Disable crash reporting:
+// http://kb.mozillazine.org/Breakpad.reportURL
 user_pref('breakpad.reportURL', '');
 
-//Disable sending pings:
-//http://kb.mozillazine.org/Browser.send_pings
-//http://kb.mozillazine.org/Browser.send_pings.require_same_host
+// Disable sending pings:
+// http://kb.mozillazine.org/Browser.send_pings
+// http://kb.mozillazine.org/Browser.send_pings.require_same_host
 user_pref('browser.send_pings', false);
 user_pref('browser.send_pings.require_same_host', true);
 
-//Enable tracking protection:
+// Enable tracking protection:
 user_pref('privacy.donottrackheader.enabled', true);
 user_pref('privacy.donottrackheader.value', 1);
 user_pref('privacy.trackingprotection.enabled', true);
 
-//Disable geolocation:
+// Disable geolocation:
 user_pref('geo.enabled', false);
 user_pref('geo.wifi.uri', '');
 
-//Disable geotargeting:
+// Disable geotargeting:
 user_pref('browser.search.geoSpecificDefaults', false);
 user_pref('browser.search.geoSpecificDefaults.url', '');
 user_pref('browser.search.geoip.url', '');
 
-//Disable telemetry:
+// Disable telemetry:
 user_pref('toolkit.telemetry.enabled', false);
 user_pref('toolkit.telemetry.server', '');
 
-//Disable 'safe browsing' aka. Google tracking/logging:
+// Disable 'safe browsing' aka. Google tracking/logging:
 user_pref('browser.safebrowsing.downloads.enabled', false);
 user_pref('browser.safebrowsing.downloads.remote.enabled', false);
 user_pref('browser.safebrowsing.enabled', false);
 user_pref('browser.safebrowsing.maleware.enabled', false);
 
-//Type 'google' in about:config and delete most of the links (the ones that won't break anything, that's up to you).
-//Also search through these to delete links from:
-//browser.contentHandlers
-//browser.safebrowsing
-//browser.search
-//gecko.handlerService
+// Type 'google' in about:config and delete most of the links (the ones that won't break anything, that's up to you).
+// Also search through these to delete links from:
+// browser.contentHandlers
+// browser.safebrowsing
+// browser.search
+// gecko.handlerService
 
-//Disable WebGL:
-//https://security.stackexchange.com/questions/13799/is-webgl-a-security-concern
+// Disable WebGL:
+// https://security.stackexchange.com/questions/13799/is-webgl-a-security-concern
 user_pref('webgl.disabled', true);
 
-//Install unsigned addons in Aurora/Dev-Edition/etc (needed for Privacy Badger, HTTPS Everywhere, etc.):
+// Install unsigned addons in Aurora/Dev-Edition/etc (needed for Privacy Badger, HTTPS Everywhere, etc.):
 user_pref('xpinstall.signatures.required', false);
 
-//----------------------------------------------------
+// ----------------------------------------------------
 
-//APPEARANCE
+// APPEARANCE
 
-//Show full URLs:
+// Show full URLs:
 user_pref('browser.urlbar.trimURLs', false);
 
-//Revert to old search bar layout:
+// Revert to old search bar layout:
 user_pref('browser.search.showOneOffButtons', false);
 
-//Remove "(site) is now fullscreen" nag message and make it faster:
+// Remove "(site) is now fullscreen" nag message and make it faster:
 user_pref('full-screen-api.approval-required', false);
 user_pref('browser.fullscreen.animate', false);
 
-//De-crap new tab page:
+// De-crap new tab page:
 user_pref('browser.newtabpage.directory.ping', '');
 user_pref('browser.newtabpage.directory.source', '');
 user_pref('browser.newtabpage.enabled', false);
 user_pref('browser.newtabpage.enhanced', false);
 
-//Disable tab animation:
-//http://www.askvg.com/how-to-disable-animation-while-opening-new-tab-in-mozilla-firefox-4-0/
+// Disable tab animation:
+// http://www.askvg.com/how-to-disable-animation-while-opening-new-tab-in-mozilla-firefox-4-0/
 user_pref('browser.tabs.animate', false);
 
-//Speed up security delay when installing add-ons:
+// Speed up security delay when installing add-ons:
 user_pref('security.dialog_enable_delay', 400);
 
-//Enable eyedropper in dev tools:
+// Enable eyedropper in dev tools:
 user_pref('devtools.command-button-eyedropper.enabled', true);
 
-//Dark theme for dev tools:
+// Dark theme for dev tools:
 user_pref('devtools.theme', dark);
 
-//----------------------------------------------------
+// ----------------------------------------------------
 
-//BLOATWARE
+// BLOATWARE
 
-//Disable 'Reader Mode':
+// Disable 'Reader Mode':
 user_pref('reader.parse-on-load.enabled', false);
 user_pref('readinglist.server', '');
 
-//Disable 'Pocket':
+// Disable 'Pocket':
 user_pref('browser.pocket.api', '');
 user_pref('browser.pocket.enabled', false);
 user_pref('browser.pocket.site', '');
 
-//Disable 'Firefox Hello':
-//https://www.mozilla.org/en-US/privacy/firefox-hello/
+// Disable 'Firefox Hello':
+// https://www.mozilla.org/en-US/privacy/firefox-hello/
 user_pref('loop.enabled', false);
 
-//Disable 'Social' crap:
+// Disable 'Social' crap:
 user_pref('social.directories', '');
 user_pref('social.remote-install.enabled', false);
 user_pref('social.shareDirectory', '');
 user_pref('social.toast-notifications.enabled', false);
 user_pref('social.whitelist', '');
 
-//Disable PDF reader:
+// Disable PDF reader:
 user_pref(pdfjs.disabled, true)
