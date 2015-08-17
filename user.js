@@ -48,11 +48,11 @@ user_pref('network.proxy.socks_remote_dns', true);
 
 // Disable IPv6:
 // http://kb.mozillazine.org/Network.dns.disableIPv6
-user_pref('network.dns.disableIPv6', true);
+// user_pref('network.dns.disableIPv6', true);
 
 // Disable crash reporting:
 // http://kb.mozillazine.org/Breakpad.reportURL
-user_pref('breakpad.reportURL', '');
+// user_pref('breakpad.reportURL', '');
 
 // Disable sending pings:
 // http://kb.mozillazine.org/Browser.send_pings
@@ -75,14 +75,14 @@ user_pref('browser.search.geoSpecificDefaults.url', '');
 user_pref('browser.search.geoip.url', '');
 
 // Disable telemetry:
-user_pref('toolkit.telemetry.enabled', false);
-user_pref('toolkit.telemetry.server', '');
+// user_pref('toolkit.telemetry.enabled', false);
+// user_pref('toolkit.telemetry.server', '');
 
 // Disable 'safe browsing' aka. Google tracking/logging:
-user_pref('browser.safebrowsing.downloads.enabled', false);
-user_pref('browser.safebrowsing.downloads.remote.enabled', false);
-user_pref('browser.safebrowsing.enabled', false);
-user_pref('browser.safebrowsing.maleware.enabled', false);
+// user_pref('browser.safebrowsing.downloads.enabled', false);
+// user_pref('browser.safebrowsing.downloads.remote.enabled', false);
+// user_pref('browser.safebrowsing.enabled', false);
+// user_pref('browser.safebrowsing.maleware.enabled', false);
 
 // Don't connect to remote links on hover
 // See http://news.slashdot.org/story/15/08/14/2321202/how-to-quash-firefoxs-silent-requests
@@ -101,7 +101,7 @@ user_pref("network.http.speculative-parallel-limit", 0);
 user_pref('webgl.disabled', true);
 
 // Install unsigned addons in Aurora/Dev-Edition/etc (needed for Privacy Badger, HTTPS Everywhere, etc.):
-user_pref('xpinstall.signatures.required', false);
+// user_pref('xpinstall.signatures.required', false);
 
 
 // APPEARANCE
@@ -122,7 +122,7 @@ user_pref("browser.urlbar.clickSelectsAll", false);
 user_pref('browser.search.showOneOffButtons', false);
 
 // Remove "(site) is now fullscreen" nag message and make it faster:
-user_pref('full-screen-api.approval-required', false);
+// user_pref('full-screen-api.approval-required', false);
 user_pref('browser.fullscreen.animate', false);
 
 // De-crap new tab page:
@@ -168,5 +168,5 @@ user_pref('social.toast-notifications.enabled', false);
 user_pref('social.whitelist', '');
 
 // Disable PDF reader:
-user_pref('pdfjs.disabled', true);
+// user_pref('pdfjs.disabled', true);
 
