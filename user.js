@@ -84,6 +84,11 @@ user_pref('browser.safebrowsing.downloads.remote.enabled', false);
 user_pref('browser.safebrowsing.enabled', false);
 user_pref('browser.safebrowsing.maleware.enabled', false);
 
+// Don't connect to remote links on hover
+// See http://news.slashdot.org/story/15/08/14/2321202/how-to-quash-firefoxs-silent-requests
+user_pref("network.http.speculative-parallel-limit", 0);
+
+
 // Type 'google' in about:config and delete most of the links (the ones that won't break anything, that's up to you).
 // Also search through these to delete links from:
 // browser.contentHandlers
@@ -103,6 +108,15 @@ user_pref('xpinstall.signatures.required', false);
 
 // Show full URLs:
 user_pref('browser.urlbar.trimURLs', false);
+
+// Don't autofill URL bar
+user_pref("browser.urlbar.autoFill", false);
+
+// Open new tabs in background
+user_pref("browser.search.context.loadInBackground", true);
+
+// Don't select entire URL
+user_pref("browser.urlbar.clickSelectsAll", false);
 
 // Revert to old search bar layout:
 user_pref('browser.search.showOneOffButtons', false);

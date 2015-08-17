@@ -160,3 +160,17 @@ social.whitelist - (blank)
 
 Disable PDF reader:
 pdfjs.disabled - true
+
+Don't connect to remote links on hover
+See http://news.slashdot.org/story/15/08/14/2321202/how-to-quash-firefoxs-silent-requests
+network.http.speculative-parallel-limit - 0
+
+Don't autofill URL bar
+browser.urlbar.autoFill - false
+
+Open new tabs in background
+browser.search.context.loadInBackground - true
+
+Don't select entire URL
+browser.urlbar.clickSelectsAll - false
+
