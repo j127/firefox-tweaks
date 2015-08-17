@@ -1,172 +1,162 @@
-/*
 Further reading:
 
 http://kb.mozillazine.org/About:config_entries (Outdated)
 http://thesimplecomputer.info/tscs-firefox-tweak-guide
 https://www.privacytools.io/#about_config
-*/
 
-// SPEED
-// (Default values from Tor Browser 4.5.3:)
+----------------------------------------------------
 
-user_pref('network.http.pipelining', true);
-user_pref('network.http.pipelining.abtest', false);
-user_pref('network.http.pipelining.aggressive', true);
-user_pref('network.http.pipelining.max-optimistic-requests', 3);
-user_pref('network.http.pipelining.maxrequests', 12);
-user_pref('network.http.pipelining.maxsize', 300000);
-user_pref('network.http.pipelining.read-timeout', 60000);
-user_pref('network.http.pipelining.reschedule-on-timeout', true);
-user_pref('network.http.pipelining.reschedule-timeout', 15000);
-user_pref('network.http.pipelining.ssl', true);
-user_pref('network.http.proxy.pipelining', true);
+SPEED
 
-user_pref('network.http.max-connections', 256);
-user_pref('network.http.max-persistent-connections-per-proxy', 256);
-user_pref('network.http.max-persistent-connections-per-server', 6);
+(Default values from Tor Browser 4.5.3:)
 
-user_pref('network.http.redirection-limit', 20);
-user_pref('network.http.fast-fallback-to-IPv4', true);
-user_pref('network.dns.disablePrefetch', true);
-user_pref('network.prefetch-next', true);
+network.http.pipelining – true
+network.http.pipelining.abtest – false
+network.http.pipelining.aggressive – true
+network.http.pipelining.max-optimistic-requests – 3
+network.http.pipelining.maxrequests – 12
+network.http.pipelining.maxsize – 300000
+network.http.pipelining.read-timeout – 60000
+network.http.pipelining.reschedule-on-timeout – true
+network.http.pipelining.reschedule-timeout – 15000
+network.http.pipelining.ssl – true
+network.http.proxy.pipelining - true
 
-// (End of Tor default values)
+network.http.max-connections - 256
+network.http.max-persistent-connections-per-proxy - 256
+network.http.max-persistent-connections-per-server - 6
 
-// Enable new cache:
-// https://bugzilla.mozilla.org/show_bug.cgi?id=913807
-user_pref('browser.cache.use_new_backend', 1);
+network.http.redirection-limit - 20
+network.http.fast-fallback-to-IPv4 - true
+network.dns.disablePrefetch - true
+network.prefetch-next - true
 
-// SECURITY/PRIVACY
+(End of Tor default values)
 
-// Disable WebRTC (extremely important for VPN users - WebRTC *will* leak your real IP address):
-user_pref('media.peerconnection.enabled', false);
-user_pref('media.peerconnection.use_document_iceservers', false);
+Enable new cache:
+https://bugzilla.mozilla.org/show_bug.cgi?id=913807
+browser.cache.use_new_backend - 1
 
-// Disable DNS proxy bypass:
-// http://kb.mozillazine.org/Network.proxy.socks_remote_dns
-user_pref('network.proxy.socks_remote_dns', true);
+----------------------------------------------------
 
-// Disable IPv6:
-// http://kb.mozillazine.org/Network.dns.disableIPv6
-// user_pref('network.dns.disableIPv6', true);
+SECURITY/PRIVACY
 
-// Disable crash reporting:
-// http://kb.mozillazine.org/Breakpad.reportURL
-// user_pref('breakpad.reportURL', '');
+Disable WebRTC (extremely important for VPN users - WebRTC *will* leak your real IP address):
+media.peerconnection.enabled - false
+media.peerconnection.use_document_iceservers - false
 
-// Disable sending pings:
-// http://kb.mozillazine.org/Browser.send_pings
-// http://kb.mozillazine.org/Browser.send_pings.require_same_host
-user_pref('browser.send_pings', false);
-user_pref('browser.send_pings.require_same_host', true);
+Disable DNS proxy bypass:
+http://kb.mozillazine.org/Network.proxy.socks_remote_dns
+network.proxy.socks_remote_dns - true
 
-// Enable tracking protection:
-user_pref('privacy.donottrackheader.enabled', true);
-user_pref('privacy.donottrackheader.value', 1);
-user_pref('privacy.trackingprotection.enabled', true);
+Disable IPv6:
+http://kb.mozillazine.org/Network.dns.disableIPv6
+network.dns.disableIPv6 - true
 
-// Disable geolocation:
-user_pref('geo.enabled', false);
-user_pref('geo.wifi.uri', '');
+Disable crash reporting:
+http://kb.mozillazine.org/Breakpad.reportURL
+breakpad.reportURL - (blank)
 
-// Disable geotargeting:
-user_pref('browser.search.geoSpecificDefaults', false);
-user_pref('browser.search.geoSpecificDefaults.url', '');
-user_pref('browser.search.geoip.url', '');
+Disable sending pings:
+http://kb.mozillazine.org/Browser.send_pings
+http://kb.mozillazine.org/Browser.send_pings.require_same_host
+browser.send_pings - false
+browser.send_pings.require_same_host - true
 
-// Disable telemetry:
-// user_pref('toolkit.telemetry.enabled', false);
-// user_pref('toolkit.telemetry.server', '');
+Enable tracking protection:
+privacy.donottrackheader.enabled - true
+privacy.donottrackheader.value - 1
+privacy.trackingprotection.enabled - true
 
-// Disable 'safe browsing' aka. Google tracking/logging:
-// user_pref('browser.safebrowsing.downloads.enabled', false);
-// user_pref('browser.safebrowsing.downloads.remote.enabled', false);
-// user_pref('browser.safebrowsing.enabled', false);
-// user_pref('browser.safebrowsing.maleware.enabled', false);
+Disable geolocation:
+geo.enabled - false
+geo.wifi.uri - (blank)
 
-// Don't connect to remote links on hover
-// See http://news.slashdot.org/story/15/08/14/2321202/how-to-quash-firefoxs-silent-requests
-user_pref("network.http.speculative-parallel-limit", 0);
+Disable geotargeting:
+browser.search.geoSpecificDefaults - false
+browser.search.geoSpecificDefaults.url - (blank)
+browser.search.geoip.url - (blank)
 
+Disable telemetry:
+toolkit.telemetry.enabled - false
+toolkit.telemetry.server - (blank)
 
-// Type 'google' in about:config and delete most of the links (the ones that won't break anything, that's up to you).
-// Also search through these to delete links from:
-// browser.contentHandlers
-// browser.safebrowsing
-// browser.search
-// gecko.handlerService
+Disable 'safe browsing' aka. Google tracking/logging:
+browser.safebrowsing.downloads.enabled - false
+browser.safebrowsing.downloads.remote.enabled - false
+browser.safebrowsing.enabled - false
+browser.safebrowsing.maleware.enabled - false
 
-// Disable WebGL:
-// https://security.stackexchange.com/questions/13799/is-webgl-a-security-concern
-user_pref('webgl.disabled', true);
+Type 'google' in about:config and delete most of the links (the ones that won't break anything, that's up to you).
+Also search through these to delete links from:
+browser.contentHandlers
+browser.safebrowsing
+browser.search
+gecko.handlerService
 
-// Install unsigned addons in Aurora/Dev-Edition/etc (needed for Privacy Badger, HTTPS Everywhere, etc.):
-// user_pref('xpinstall.signatures.required', false);
+Disable WebGL:
+https://security.stackexchange.com/questions/13799/is-webgl-a-security-concern
+webgl.disabled - true
 
+Install unsigned addons in Aurora/Dev-Edition/etc (needed for Privacy Badger, HTTPS Everywhere, etc.):
+xpinstall.signatures.required - false
 
-// APPEARANCE
+----------------------------------------------------
 
-// Show full URLs:
-user_pref('browser.urlbar.trimURLs', false);
+APPEARANCE
 
-// Don't autofill URL bar
-user_pref("browser.urlbar.autoFill", false);
+Show full URLs:
+browser.urlbar.trimURLs - false
 
-// Open new tabs in background
-user_pref("browser.search.context.loadInBackground", true);
+Revert to old search bar layout:
+browser.search.showOneOffButtons - false
 
-// Don't select entire URL
-user_pref("browser.urlbar.clickSelectsAll", false);
+Remove "(site) is now fullscreen" nag message and make it faster:
+full-screen-api.approval-required - false
+browser.fullscreen.animate - false
 
-// Revert to old search bar layout:
-user_pref('browser.search.showOneOffButtons', false);
+De-crap new tab page:
+browser.newtabpage.directory.ping - (blank)
+browser.newtabpage.directory.source - (blank)
+browser.newtabpage.enabled - false
+browser.newtabpage.enhanced - false
 
-// Remove "(site) is now fullscreen" nag message and make it faster:
-// user_pref('full-screen-api.approval-required', false);
-user_pref('browser.fullscreen.animate', false);
+Disable tab animation:
+http://www.askvg.com/how-to-disable-animation-while-opening-new-tab-in-mozilla-firefox-4-0/
+browser.tabs.animate – false
 
-// De-crap new tab page:
-user_pref('browser.newtabpage.directory.ping', '');
-user_pref('browser.newtabpage.directory.source', '');
-user_pref('browser.newtabpage.enabled', false);
-user_pref('browser.newtabpage.enhanced', false);
+Speed up security delay when installing add-ons:
+security.dialog_enable_delay - 400
 
-// Disable tab animation:
-// http://www.askvg.com/how-to-disable-animation-while-opening-new-tab-in-mozilla-firefox-4-0/
-user_pref('browser.tabs.animate', false);
+Enable eyedropper in dev tools:
+devtools.command-button-eyedropper.enabled - true
 
-// Speed up security delay when installing add-ons:
-user_pref('security.dialog_enable_delay', 400);
+Dark theme for dev tools:
+devtools.theme - dark
 
-// Enable eyedropper in dev tools:
-user_pref('devtools.command-button-eyedropper.enabled', true);
+----------------------------------------------------
 
-// Dark theme for dev tools:
-user_pref('devtools.theme', dark);
+BLOATWARE
 
+Disable 'Reader Mode':
+reader.parse-on-load.enabled - false
+readinglist.server - (blank)
 
-// BLOATWARE
+Disable 'Pocket':
+browser.pocket.api - (blank)
+browser.pocket.enabled - false
+browser.pocket.site - (blank)
 
-// Disable 'Reader Mode':
-user_pref('reader.parse-on-load.enabled', false);
-user_pref('readinglist.server', '');
+Disable 'Firefox Hello':
+https://www.mozilla.org/en-US/privacy/firefox-hello/
+loop.enabled - false
 
-// Disable 'Pocket':
-user_pref('browser.pocket.api', '');
-user_pref('browser.pocket.enabled', false);
-user_pref('browser.pocket.site', '');
+Disable 'Social' crap:
+social.directories - (blank)
+social.remote-install.enabled - false
+social.shareDirectory - (blank)
+social.toast-notifications.enabled - false
+social.whitelist - (blank)
 
-// Disable 'Firefox Hello':
-// https://www.mozilla.org/en-US/privacy/firefox-hello/
-user_pref('loop.enabled', false);
-
-// Disable 'Social' crap:
-user_pref('social.directories', '');
-user_pref('social.remote-install.enabled', false);
-user_pref('social.shareDirectory', '');
-user_pref('social.toast-notifications.enabled', false);
-user_pref('social.whitelist', '');
-
-// Disable PDF reader:
-// user_pref('pdfjs.disabled', true);
-
+Disable PDF reader:
+pdfjs.disabled - true
