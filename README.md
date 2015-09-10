@@ -1,5 +1,7 @@
 # firefox-tweaks
 
+*NOTE:* this is a fork of [https://github.com/dfkt/firefox-tweaks](https://github.com/dfkt/firefox-tweaks). Go check out the original one at that link.
+
 A `user.js` settings file to make Firefox better.
 
 *UPDATE:* I've made a new version of Firefox customizations [over here](https://github.com/j127/Better-Firefox).
